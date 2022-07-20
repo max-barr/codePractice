@@ -6,7 +6,7 @@
 solution = (n) => {
     // set area to 1 to match the n=1 polygon. Just one square. We want to return this area at the end of the function.
     let area = 1;
-
+    // areas increase by multiples of 4
     for (let i = 1; i < n; i++) {
         area += 4 * i;
     }
