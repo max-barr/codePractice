@@ -47,3 +47,67 @@ printOneReturnAnother([2,3,4,5,6,7,8]);
 
 // *****************************************************************************
 
+// Double Vision
+// Given an array, create a function to return a new array where each value in the original has been doubled. Calling double([1,2,3]) should return [2,4,6] without changing original.
+
+const doubleVision = (arr) => {
+    let dubArray = [];
+    for(let i = 0; i < arr.length; i++) {
+        dubArray.push(arr[i] * 2);
+    }
+    console.log(dubArray);
+    return dubArray;
+}
+doubleVision([24,6,2,30,50]);
+
+// *****************************************************************************
+
+// Count Positives
+// Given an array of numbers, create a function to replace last value with the number of positive values. Example,  countPositives([-1,1,1,1]) changes array to [-1,1,1,3] and returns it.
+
+const countPositives = (arr) => {
+    let positiveCount = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            positiveCount++;
+        }
+    }
+    arr[arr.length - 1] = positiveCount;
+    console.log(arr);
+    return arr;
+}
+countPositives([-1,1,2,3,4,5,6,1,3]);
+
+// *****************************************************************************
+
+// Evens and Odds
+// Create a function that accepts an array. Every time that array has three odd values in a row, print "That’s odd!" Every time the array has three evens in a row, print "Even more so!"
+
+const evensOdds = (arr) => {
+    let oddCount = 0;
+    let evenCount = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] % 2 != 0) {
+            oddCount++;
+            if(oddCount == 3) {
+                console.log("That's odd!")
+                oddCount = 0
+            }
+        } else {
+            oddCount = 0;
+        }
+        if(arr[i] % 2 == 0) {
+            evenCount++;
+            if(evenCount == 3) {
+                console.log("Even more so!");
+                evenCount = 0;
+            }
+        } else {
+            evenCount = 0;
+        }
+    }
+}
+evensOdds([2,1,3,2,2,2,1,3,5,2,4,6,1,3,5]);
+
+// *****************************************************************************
+
