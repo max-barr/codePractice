@@ -12,6 +12,8 @@
 
 // There are no characters in this string that do not repeat.
 
+// Complexity O(n). Linear
+
 const solution = (s) => {
     // Create a new map to store key value pairs of characters and number of occurences 
     const charCount = new Map();
