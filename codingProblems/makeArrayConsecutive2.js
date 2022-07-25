@@ -7,11 +7,15 @@
 
 
 function solution(nums) {
+    // Use the sort method and a compare function to sort values two at a time.
     nums.sort(function(a,b){return a-b});
+    // With the array sorted, min is index 0 and max is the last number in the array.
     let min = nums[0];
     let max = nums[nums.length -1];
+    // set a count variable to count the number of values needed.
     let count = 0;
     for(let i = min; i < max; i++) {
+        // If the index of i is not found, increment the count
         if(nums.indexOf(i) == -1) {
             count++;
         }
