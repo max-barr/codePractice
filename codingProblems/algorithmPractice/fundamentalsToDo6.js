@@ -97,3 +97,37 @@ messyMath(15);
 
 // *****************************************************************************
 
+// Twelve-Bar Blues
+// Write a function that console.logs the number 1, then "chick", then "boom", then "chick", then 2, then "chick", "boom", "chick" – continuing the same cycle for each number up to (including) 12.
+
+const twelveBarBlues = () => {
+    for(let i = 1; i <= 12; i++) {
+        console.log(i);
+        console.log("chick");
+        console.log("boom");
+        console.log("chick");
+    }
+}
+twelveBarBlues();
+
+// *****************************************************************************
+
+// Fibonacci
+// Create a function to generate Fibonacci numbers. In this famous mathematical sequence, each number is the sum of the previous two, starting with values 0 and 1. Your function should accept one argument, an index into the sequence (where 0 corresponds to the initial value, 4 corresponds to the value four later, etc). 
+
+// Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1)+fib(2), or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8), etc.
+
+const fibonacci = (ind) => {
+    let a = 0, b = 1, temp;
+
+    while (ind >= 0) {
+        temp = a;
+        a = a + b;
+        b = temp;
+        ind--;
+    }
+
+    console.log(b);
+    return b;
+}
+fibonacci(7);
