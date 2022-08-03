@@ -117,17 +117,34 @@ twelveBarBlues();
 
 // Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1)+fib(2), or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8), etc.
 
-const fibonacci = (ind) => {
+const fibonacci = (num) => {
     let a = 0, b = 1, temp;
 
-    while (ind >= 0) {
+    while (num >= 0) {
         temp = a;
         a = a + b;
         b = temp;
-        ind--;
+        num--;
     }
 
     console.log(b);
     return b;
 }
 fibonacci(7);
+
+// *****************************************************************************
+
+// Sum to One Digit
+// Implement sumToOne(num) that sums a given integer’s digits repeatedly until the sum is only one digit. Return that one-digit result. 
+
+// Example: sumToOne(928) returns 1, because 9+2+8 = 19, then 1+9 = 10, then 1+0 = 1.
+
+const sumToOne = (num) => {
+    let array = num.toString().split("");
+    console.log(array);
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+}
+sumToOne(123);
