@@ -134,17 +134,21 @@ fibonacci(7);
 
 // *****************************************************************************
 
-// Sum to One Digit
-// Implement sumToOne(num) that sums a given integer’s digits repeatedly until the sum is only one digit. Return that one-digit result. 
+// Is Prime
+// Return whether a given integer is prime. Prime numbers are only evenly divisible by themselves and 1. Many highly optimized solutions exist, but for now, just create one that is easy to understand and debug.
 
-// Example: sumToOne(928) returns 1, because 9+2+8 = 19, then 1+9 = 10, then 1+0 = 1.
-
-const sumToOne = (num) => {
-    let array = num.toString().split("");
-    console.log(array);
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
+const isPrime = (num) => {
+    if (num === 1) {
+        return false;
+    } else if (num === 2) {
+        return true;
+    } else {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
-sumToOne(123);
+console.log(isPrime(9));
