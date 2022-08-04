@@ -152,3 +152,23 @@ const isPrime = (num) => {
     }
 }
 console.log(isPrime(9));
+
+// *****************************************************************************
+
+// Rockin’ the Dojo Sweatshirt
+// Let’s say they cost $20 (including tax), but friendly Josh gives a 9% discount if you buy two, a nice 19% discount if you buy three, or a sweet 35% discount if you buy four or more. He only accepts cash and says he doesn’t have coins, so you should round up to the nearest dollar. Build function sweatshirtPricing(num) that, given a number of sweatshirts, returns the cost.
+
+const sweatshirtPricing = (num) => {
+    let price = 20;
+    if (num == 2) {
+        price = Math.ceil(price * 0.91) * 2;
+        console.log(price);
+    } else if (num == 3) {
+        price = Math.ceil(price * 0.81) * 3;
+    } else if (num >= 4) {
+        price = Math.ceil(price * 0.65) * num;
+    }
+    console.log(num + " sweatshirts will cost " + price + " dollars.")
+    return price;
+}
+sweatshirtPricing(3);
